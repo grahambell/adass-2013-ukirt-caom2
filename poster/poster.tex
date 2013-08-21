@@ -1,0 +1,94 @@
+\documentclass[a0paper,portrait]{baposter}
+\usepackage{relsize}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{enumitem}
+
+\definecolor{u2cgreen}{RGB}{0,90,0}
+\definecolor{u2cyellow}{RGB}{255,255,0}
+\definecolor{u2cltyellow}{RGB}{255,255,255}
+
+%\setitemize[0]{leftmargin=0pt,itemindent=10pt}
+%\setenumerate[0]{leftmargin=15pt,itemindent=0pt}
+
+\begin{document}
+\begin{poster}{
+    columns=3,
+    background=none,
+    eyecatcher=false,
+    textborder=roundedsmall,
+    headerborder=closed,
+    headershape=smallrounded,
+    headershade=shadeTB,
+    boxshade=none,
+    borderColor=u2cgreen,
+    headerColorOne=u2cltyellow,
+    headerColorTwo=u2cyellow,
+    linewidth=1
+}{
+
+}{\raggedright \smaller
+Adding UKIRT archive data to CADC
+}{
+\vspace{0.1cm} \\
+Graham Bell, Malcolm Currie, Russell Redman, Maren Purves, Tim Jenness
+\vspace{0.1cm} \\
+\textsl{Joint Astronomy Centre, Hawaii}
+\vspace{0.1cm} \\
+\textsl{CADC, Victoria}
+}{
+\begin{tabular}{r}
+\includegraphics[width=2cm]{jaclogo} \\
+\includegraphics[width=4cm]{stfclogo}
+\end{tabular}
+}
+
+\headerbox{CAOM-2}{name=caom2,column=0,row=0}{
+    \raggedright
+
+    Introduction to CAOM-2.
+}
+
+
+
+\headerbox{Cassegrain Instruments}{name=inst,column=1,row=0}{
+    \raggedright
+
+    Introduction to the instruments.
+}
+
+
+\headerbox{Ingestion}{name=ingestion,column=0,span=2,below=caom2}{
+    \raggedright
+
+    Intermediate database and CAOM-2 ingestion.
+}
+
+
+\headerbox{Pipeline}{name=pipeline,column=0,span=2,below=ingestion}{
+    \raggedright
+
+    Running ORAC-DR on the observations.
+}
+
+
+\headerbox{Flowchart}{name=chart,column=2,row=0}{
+    \raggedright
+
+    Flow chart goes here.
+}
+
+\headerbox{Example}{name=example,column=2,below=chart,above=bottom}{
+    \raggedright
+
+    Example image goes here.
+}
+
+\headerbox{Links}{name=links,column=0,span=2,below=pipeline,above=bottom}{
+    \raggedright
+
+    Links go here.
+}
+\end{poster}
+\end{document}
