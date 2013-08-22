@@ -44,42 +44,46 @@ Graham Bell, Malcolm Currie, Russell Redman, Maren Purves, Tim Jenness
 \end{tabular}
 }
 
-\headerbox{CAOM-2}{name=caom2,column=0,row=0}{
+\headerbox{Introduction}{name=intro,column=0,row=0}{
+    \raggedright
+
+    General introduction.
+
+    \includegraphics[scale=0.5]{../gfx/flow-crop}
+}
+
+\headerbox{CAOM-2}{name=caom2,column=1,row=0}{
     \raggedright
 
     Introduction to CAOM-2.
 }
 
-
-
-\headerbox{Cassegrain Instruments}{name=inst,column=1,row=0}{
+\headerbox{UKIRT Instruments}{name=inst,column=2,row=0}{
     \raggedright
 
     Introduction to the instruments.
 }
 
+\headerbox{E-transfer}{name=etransfer,column=1,span=2,below=caom2}{
+    \raggedright
 
-\headerbox{Ingestion}{name=ingestion,column=0,span=2,below=caom2}{
+    E-transfer.
+}
+
+\headerbox{Ingestion}{name=ingestion,column=1,span=2,below=etransfer}{
     \raggedright
 
     Intermediate database and CAOM-2 ingestion.
 }
 
 
-\headerbox{Pipeline}{name=pipeline,column=0,span=2,below=ingestion}{
+\headerbox{Pipeline}{name=pipeline,column=0,span=2,below=intro}{
     \raggedright
 
     Running ORAC-DR on the observations.
 }
 
-
-\headerbox{Flowchart}{name=chart,column=2,row=0}{
-    \raggedright
-
-    Flow chart goes here.
-}
-
-\headerbox{Example}{name=example,column=2,below=chart,above=bottom}{
+\headerbox{Example}{name=example,column=2,below=intro,above=bottom}{
     \raggedright
 
     Example image goes here.

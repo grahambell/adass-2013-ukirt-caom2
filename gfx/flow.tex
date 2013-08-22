@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[a3paper,landscape]{geometry}
+\usepackage{tikz}
+\usepackage{mathpazo}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning,patterns,snakes}
+
+\tikzstyle{link} = [draw, thick]
+
+\tikzstyle{every entity} = [draw, thick, top color=white, draw=green!50!black!100, minimum width=6em, minimum height=2em]
+
+\tikzstyle{data} = [rectangle, bottom color=yellow!90, every entity]
+
+\tikzstyle{action} = [ellipse, bottom color=blue!30, draw=green!50!black!100, every entity]
+
+\pagestyle{empty}
+\begin{document}
+
+\input{flow-picture}
+
+\end{document}

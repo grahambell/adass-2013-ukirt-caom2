@@ -1,0 +1,33 @@
+\begin{tikzpicture} [node distance=4em, every edge/.style={link}]
+
+% Finding Files
+
+\node[action] (find) [] {Find Files};
+
+\node[data] (list) [below of=find] {File List} edge (find);
+
+% E-transfer
+
+\node[action] (fixfits) [below of=list, xshift=-5em] {Fix FITS files} edge (list);
+
+\node[action] (convertobs) [below of=list, xshift=-15em] {Merge or convert} edge (list);
+
+\node[data] (tempfiles) [below of=fixfits, xshift=-5em] {Temporary copy} edge (fixfits) edge(convertobs);
+
+\node[action] (etransfer) [below of=tempfiles] {e-Transfer} edge (tempfiles);
+
+\node[data] (filearchive) [below of=etransfer] {Archive} edge (etransfer);
+
+
+% Headers and Ingestion
+
+\node[action] (readhead) [below of=list, xshift=10em] {Read Headers} edge (list);
+
+\node[data] (database) [below of=readhead] {Intermediate Database} edge (readhead);
+
+\node[action] (caom2xml) [below of=database] {Generate CAOM-2 XML} edge (database);
+
+\node[data] (metaarchive) [below of=caom2xml] {Archive} edge (caom2xml);
+
+\end{tikzpicture}
+
