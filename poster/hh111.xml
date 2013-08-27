@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<caom2:Observation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:caom2="vos://cadc.nrc.ca!vospace/CADC/xml/CAOM/v2.0" xsi:type="caom2:SimpleObservation" caom2:id="928837352192686452" caom2:lastModified="2013-08-23T14:25:31.074">
+<caom2:Observation>
   <caom2:collection>UKIRT</caom2:collection>
   <caom2:observationID>i19971214_00010</caom2:observationID>
   <caom2:metaRelease>1998-12-14T00:00:00.000</caom2:metaRelease>
@@ -13,60 +12,16 @@
     <caom2:name>HH111</caom2:name>
   </caom2:target>
   <caom2:telescope>
-    <caom2:name>UKIRT</caom2:name>
-    <caom2:geoLocationX>-5464374.16322</caom2:geoLocationX>
-    <caom2:geoLocationY>2493677.18978</caom2:geoLocationY>
-    <caom2:geoLocationZ>2150638.11744</caom2:geoLocationZ>
+    <caom2:name>UKIRT</caom2:name> <!-- ... -->
   </caom2:telescope>
   <caom2:instrument>
     <caom2:name>ircam</caom2:name>
-    <caom2:keywords>pol=false magnifier=out detector_mode=nd_stare</caom2:keywords>
+    <caom2:keywords>
+      pol=false magnifier=out detector_mode=nd_stare
+    </caom2:keywords>
   </caom2:instrument>
   <caom2:environment>
     <caom2:elevation>72.674337141</caom2:elevation>
   </caom2:environment>
-  <caom2:planes>
-    <caom2:plane caom2:id="5167569026478466861" caom2:lastModified="2013-08-23T14:25:31.086">
-      <caom2:productID>raw</caom2:productID>
-      <caom2:metaRelease>1998-12-14T00:00:00.000</caom2:metaRelease>
-      <caom2:dataRelease>1998-12-14T00:00:00.000</caom2:dataRelease>
-      <caom2:calibrationLevel>0</caom2:calibrationLevel>
-      <caom2:artifacts>
-        <caom2:artifact caom2:id="3611856830198671346" caom2:lastModified="2013-08-23T14:25:31.086">
-          <caom2:uri>ad:UKIRT/i19971214_00010.sdf</caom2:uri>
-          <caom2:alternative>false</caom2:alternative>
-          <caom2:parts>
-            <caom2:part caom2:id="-2562296783949567882" caom2:lastModified="2013-08-23T14:25:31.086">
-              <caom2:name>ndf</caom2:name>
-              <caom2:chunks>
-                <caom2:chunk caom2:id="-5808829165330274113" caom2:lastModified="2013-08-23T14:25:31.087">
-                  <caom2:energy>
-                    <caom2:axis>
-                      <caom2:axis>
-                        <caom2:ctype>WAVE</caom2:ctype>
-                        <caom2:cunit>m</caom2:cunit>
-                      </caom2:axis>
-                      <caom2:range>
-                        <caom2:start>
-                          <caom2:pix>0.5</caom2:pix>
-                          <caom2:val>1e-06</caom2:val>
-                        </caom2:start>
-                        <caom2:end>
-                          <caom2:pix>1.5</caom2:pix>
-                          <caom2:val>5e-06</caom2:val>
-                        </caom2:end>
-                      </caom2:range>
-                    </caom2:axis>
-                    <caom2:specsys>TOPOCENT</caom2:specsys>
-                    <caom2:ssysobs>TOPOCENT</caom2:ssysobs>
-                    <caom2:bandpassName>S(1)</caom2:bandpassName>
-                  </caom2:energy>
-                </caom2:chunk>
-              </caom2:chunks>
-            </caom2:part>
-          </caom2:parts>
-        </caom2:artifact>
-      </caom2:artifacts>
-    </caom2:plane>
-  </caom2:planes>
+  <caom2:planes> <!-- ... --> </caom2:planes>
 </caom2:Observation>
