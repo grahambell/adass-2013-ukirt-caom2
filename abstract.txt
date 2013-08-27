@@ -15,7 +15,7 @@ without alteration, except for minor fixes to headers of data in
 FITS format to allow it to pass fitsverify and be accepted by CADC.
 Some of the older data comprised multiple integrations in separate
 files per observation, stored in either NDF or DST format. These
-were placed inside HDS container files, with the DST files rearranged
+were placed inside HDS container files, and DST files were rearranged
 into NDF format.
 
 The process of ingesting the metadata into the CAOM-2 repository
