@@ -1,0 +1,30 @@
+Title: A New Archive of UKIRT Legacy Data at CADC
+
+Abstract:
+
+A new archive of raw data from the United Kingdom Infrared
+Telescope (UKIRT) is being constructed at the Canadian Astronomy
+Data Centre (CADC).  It contains all data available apart from
+that from the Wide Field Camera (WFCAM), which is already
+accessible from the WFCAM Science Archive.
+
+The desire was to archive the data in as close to its original raw
+format as possible.  Where the data followed our current convention
+of having a single data file per observation, it was archived
+without alteration, except for minor fixes to headers of data in
+FITS format to allow it to pass fitsverify and be accepted by CADC.
+Some of the older data comprised multiple integrations in separate
+files per observation, stored in either NDF or DST format. These
+were placed inside HDS container files, with the DST files rearranged
+into NDF format.
+
+The process of ingesting the metadata into the CAOM-2 repository
+was broken into two stages.  First the headers were read from
+the data files and stored in an intermediate MongoDB database.
+Then the ingestion process uses this database to generate an XML
+file for each observation and sends this file to the repository.
+
+The final stage is to run the ORAC-DR pipeline to generate reduced
+data products.  The intermediate database can be used to identify
+groups of observations to be processed together and to supply
+additional data where the original headers were insufficient.
