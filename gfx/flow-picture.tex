@@ -29,5 +29,11 @@
 
 \node[data] (metaarchive) [below of=caom2xml] {Archive} edge (caom2xml);
 
+% Pipeline
+
+\node[action] (pipeline) [below of=filearchive] {Pipeline} edge (filearchive) edge (database);
+
+\node[data] (product) [below of=pipeline] {Reduced Data Products} edge (pipeline);
+
 \end{tikzpicture}
 
