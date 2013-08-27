@@ -6,13 +6,13 @@
 \usepackage{enumitem}
 \usepackage{setspace}
 \usepackage{listings}
-%\usepackage{siunitx}
+\usepackage{siunitx}
 
-\definecolor{u2cgreen}{RGB}{0,90,0}
+\definecolor{u2cgreen}{RGB}{0,60,0}
 \definecolor{u2cyellow}{RGB}{255,255,0}
 \definecolor{u2cltyellow}{RGB}{255,255,255}
 
-%\setitemize[0]{leftmargin=0pt,itemindent=10pt}
+\setitemize[0]{leftmargin=0pt,itemindent=10pt}
 %\setenumerate[0]{leftmargin=15pt,itemindent=0pt}
 
 \begin{document}
@@ -49,105 +49,119 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 
 \headerbox{Introduction}{name=intro,column=0,row=0}{
     \raggedright
+    A new archive of raw data from the United Kingdom Infrared
+    Telescope (UKIRT) is being constructed at the Canadian Astronomy
+    Data Centre (CADC).  It contains all available data from
+    the cassegrain instruments.
 
-    General introduction.
-
-    United Kingdom Infrared Telescope (UKIRT)
-
-    At Canadian Astronomy Data Centre (CADC).
-
-    \begin{itemize}
-
-    \item Archive of the actual raw files.
-    %(CASU archives converted FITS versions.)
-
-    \item Generate reduced data products. Use same infrastructure at CADC for JSA to generate reduced products.
-    \end{itemize}
-
-    \vspace{2in}
-
-    \includegraphics[scale=0.5]{../gfx/flow-crop}
-
-    \vspace{2in}
-
-    Total observations: 1,183,643 \\
-    Raw data size: ????
-}
-
-\headerbox{CAOM-2.0}{name=caom2,column=1,row=0}{
-    \raggedright
-
-     CAOM-2.0 is the next generation of the
-     Common Archive Observation Model
-     %data model
-     currently being developed at CADC.
-
-     \vspace{2in}
-}
-
-\headerbox{E-Transfer to CADC}{name=etransfer,column=1,span=2,below=caom2}{
-    \raggedright
-
-    Prepare files:
-
-    \begin{centering}
-    \begin{tabular}{p{1.8in} p{1.8in} p{1.8in}}
-    \bf FITS & \bf NDF & \bf DST \\
-
-    Edit where necessary so that the file passes \texttt{fitsverify}.
-    (e.g. trailing Z in DATE-OBS / DATE-END headers.)
-
-    &
-
-    Merge O, I files to a single container
-    with a standardized filename.
-
-    &
-
-    Standardize filename.
-
-    Rearrange files to NDF format.
-
-    \end{tabular}
-    \end{centering}
-}
-
-\headerbox{UKIRT Instruments}{name=inst,column=2,row=0,above=etransfer}{
-    \raggedright
-    The new archive will contain data from UKIRT's cassegrain instruments:
-
-    {\smaller \center
-    \begin{tabular}{cc}
-    \bf CGS4                            & \bf UFTI                           \\
-    %\unit{1--5}{\micro\meter}
-    \smaller spectrometer               & \smaller 1-2.5um imager            \\
-                                        &                                    \\
-    \bf IRCAM                           & \bf UIST                           \\
-    \smaller 1-5um imager               & \smaller 1-5um imager/spectrometer \\
-                                        &                                    \\
-    \bf Michelle                        &                                    \\
-    \smaller 8-25um imager/spectrometer &                                    \\
-    \end{tabular}}
-
-    \quad \\
+    \quad
 
     \raggedright
     These instruments
     %have not been used at UKIRT since
     % the telescope entered ``minimalist mode'' in
     were used at UKIRT until 2011,
-    since when WFCAM has been used exclusively.
-    Data from WFCAM (the Wide Field Camera) are archived
+    since when the Wide Field Camera (WFCAM)
+    has been used exclusively.
+    Data from WFCAM are archived
     in the WFCAM Science Archive at the
     University of Edinburgh.
+
+    \quad
+
+    \includegraphics[scale=0.5]{../gfx/flow-crop}
+
+    \quad
+
+    \begin{centering}
+    \begin{tabular}{ll}
+    Total observations: & 1,183,643 \\
+    Raw data size: & ????
+    \end{tabular}
+    \end{centering}
+
+    \vspace{3.5in}
+}
+
+\headerbox{CAOM-2}{name=caom2,column=1,row=0}{
+    \raggedright
+
+     CAOM-2 is the next generation of the
+     Common Archive Observation Model
+     currently being developed at CADC.
+
+     \vspace{1.5in}
+}
+
+\headerbox{E-Transfer to CADC}{name=etransfer,column=1,span=2,below=caom2}{
+    \raggedright
+
+    \begin{itemize}
+    \item Data archived in as close to its original raw format as possible.
+
+    \item Filenames standardized following our current convention.
+
+    \item Minor changes made to files as they were staged for transfer,
+    depending on format:
+    \end{itemize}
+
+    \begin{centering}
+    \begin{tabular}{p{1.8in} p{1.8in} p{1.8in}}
+    \textbf{FITS} & \textbf{NDF} & \textbf{DST} \\
+
+    \raggedright
+    Header fixes to pass \texttt{fitsverify},
+    e.g. removal of trailing \texttt{Z} in date headers.
+
+    &
+
+    \raggedright
+    If multiple integrations are separate files,
+    store in an HDS container file.
+    %with a standardized filename.
+
+    &
+
+    \raggedright
+    Rearranged to NDF format.
+
+    \raggedright
+    Stored multiple integrations in HDS container.
+
+    \end{tabular}
+    \end{centering}
+
+    \smaller[2]
+    \textbf{HDS}: Starlink Hierarchical Data System. \\
+    \textbf{NDF}: Starlink Extensible N-Dimensional Data Format (an HDS format). \\
+    \textbf{DST}: Figaro Format (an HDS format). \\
+}
+
+\headerbox{UKIRT Instruments}{name=inst,column=2,row=0,above=etransfer}{
+    \raggedright
+    The new archive contains data from UKIRT's cassegrain instruments:
+
+    {\center
+    \begin{tabular}{cc}
+    \bf CGS4                                      & \bf UFTI                                             \\
+    \smaller[2] 1--\SI{5}{\micro\meter} spectrometer & \smaller[2] 1--\SI{2.5}{\micro\meter} imager            \\
+                                                  &                                                      \\
+    \bf IRCAM                                     & \bf UIST                                             \\
+    \smaller[2] 1--\SI{5}{\micro\meter} imager       & \smaller[2] 1--\SI{5}{\micro\meter} imager/spectrometer \\
+                                                  &                                                      \\
+    \bf Michelle                                  &                                                      \\
+    \smaller[2] 8--\SI{25}{\micro\meter} imager/spectrometer &                                              \\
+    \end{tabular}}
 }
 
 \headerbox{Pipeline}{name=pipeline,column=0,span=2,below=intro}{
     \raggedright
 
-    Running ORAC-DR on the observations.
+    \begin{itemize}
+    \item Generate reduced data products. Use same infrastructure at CADC for JSA to generate reduced products.
+    \end{itemize}
 
-    \vspace{2.5in}
+    \vspace{1.5in}
 }
 
 \headerbox{Example}{name=example,column=2,below=intro,above=bottom}{
