@@ -15,7 +15,7 @@
     <caom2:name>UKIRT</caom2:name> <!-- ... -->
   </caom2:telescope>
   <caom2:instrument>
-    <caom2:name>ircam</caom2:name>
+    <caom2:name>IRCAM</caom2:name>
     <caom2:keywords>
       pol=false magnifier=out detector_mode=nd_stare
     </caom2:keywords>
