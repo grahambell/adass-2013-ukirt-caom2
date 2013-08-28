@@ -5,7 +5,6 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage{setspace}
-\usepackage{listings}
 \usepackage{siunitx}
 
 \definecolor{u2cgreen}{RGB}{0,60,0}
@@ -191,12 +190,63 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 
 \begin{tikzpicture}
 \draw node[text width=2.5in, text ragged, font=\tiny, draw] (mongo) {
-    %\lstset{language=Java}
-    \lstinputlisting[]{hh111.json}
+\{ \\
+        "\_id" :      ObjectId("5176688af9f5db5f13b83ee0"), \\
+        "group" :    null, \\
+        "filename" : "i19971214\_00010.sdf", \\
+        "headers" : [ \\
+                \{ \\
+                        "AMSTART" :  1.047529, \\
+                        "AMEND" :    1.047529, \\
+                        "INSTRUME" : "IRCAM3", \\
+                        "MODE" :     "ND\_STARE", \\
+                        "OBJECT" :   "HH111", \\
+                        "OBSTYPE" :  "OBJECT", \\
+                        // ... \\
+                \}, \\
+                \{ \\
+                        "INTNUM" :   1, \\
+                        "RUTEND" :   10.92177, \\
+                        "RUTSTART" : 10.90462, \\
+                        // ... \\
+                \} \\
+        ], \\
+        "obs" :      10, \\
+        "rawfiles" : [ \\
+                "19971214/odir/o971214\_10.sdf", \\
+                "19971214/idir/i971214\_10\_1.sdf" \\
+        ], \\
+        "utdate" :   "19971214", \\
+\}
 };
 \draw node[text width=3.0in, text ragged, font=\tiny, draw, right of=mongo, node distance=3.0in] {
-    %\lstset{language=XML}
-    \lstinputlisting[]{hh111.xml}
+<caom2:Observation> \\
+  <caom2:collection>UKIRT</caom2:collection> \\
+  <caom2:observationID>i19971214\_00010</caom2:observationID> \\
+  <caom2:metaRelease>1998-12-14T00:00:00.000</caom2:metaRelease> \\
+  <caom2:sequenceNumber>10</caom2:sequenceNumber> \\
+  <caom2:algorithm> \\
+    <caom2:name>exposure</caom2:name> \\
+  </caom2:algorithm> \\
+  <caom2:type>object</caom2:type> \\
+  <caom2:intent>science</caom2:intent> \\
+  <caom2:target> \\
+    <caom2:name>HH111</caom2:name> \\
+  </caom2:target> \\
+  <caom2:telescope> \\
+    <caom2:name>UKIRT</caom2:name> <!-- ... --> \\
+  </caom2:telescope> \\
+  <caom2:instrument> \\
+    <caom2:name>IRCAM</caom2:name> \\
+    <caom2:keywords> \\
+      pol=false magnifier=out detector\_mode=nd\_stare \\
+    </caom2:keywords> \\
+  </caom2:instrument> \\
+  <caom2:environment> \\
+    <caom2:elevation>72.674337141</caom2:elevation> \\
+  </caom2:environment> \\
+  <caom2:planes> <!-- ... --> </caom2:planes> \\
+</caom2:Observation>
 };
 \end{tikzpicture}
 }
