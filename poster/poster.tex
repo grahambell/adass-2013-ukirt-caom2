@@ -12,7 +12,7 @@
 \definecolor{u2cyellow}{RGB}{255,255,0}
 \definecolor{u2cltyellow}{RGB}{255,255,255}
 
-\setitemize[0]{leftmargin=0pt,itemindent=10pt}
+\setitemize[0]{leftmargin=10pt,labelindent=0pt}
 %\setenumerate[0]{leftmargin=15pt,itemindent=0pt}
 
 \begin{document}
@@ -52,23 +52,16 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
     \raggedright
     A new archive of raw data from the United Kingdom Infrared
     Telescope (UKIRT) is being constructed at the Canadian Astronomy
-    Data Centre (CADC).  It contains all available data from
-    the cassegrain instruments.
+    Data Centre (CADC).
 
-    \quad
+    \begin{itemize}
+        \item Excludes data from
+        the Wide Field Camera (WFCAM),
+        since it is already available
+        in the WFCAM Science Archive in
+        Edinburgh.
 
-    \raggedright
-    These instruments
-    %have not been used at UKIRT since
-    % the telescope entered ``minimalist mode'' in
-    were used at UKIRT until 2011,
-    since when the Wide Field Camera (WFCAM)
-    has been used exclusively.
-    Data from WFCAM are archived
-    in the WFCAM Science Archive at the
-    University of Edinburgh.
-
-    \quad
+    \end{itemize}
 
     \includegraphics[scale=0.5]{../gfx/flow-crop}
 
@@ -76,8 +69,8 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 
     \begin{centering}
     \begin{tabular}{ll}
-    Total observations: & 1,183,643 \\
-    Raw data size: & ????
+    Total number of observations: & 1,182,507 \\
+    Raw data size: & 2.147\,GiB
     \end{tabular}
     \end{centering}
 
@@ -91,7 +84,16 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
      Common Archive Observation Model
      currently being developed at CADC.
 
-     \vspace{1.5in}
+     \begin{itemize}
+         \item Standardizes the core parts of the achive
+               between various ``collections''.
+
+         \item UKIRT added as a new collection.
+
+         \item Includes raw and reduced data.
+
+         \item Uses a single ``advanced search'' interface for all collections.
+     \end{itemize}
 }
 
 \headerbox{E-Transfer to CADC}{name=etransfer,column=1,span=2,below=caom2}{
@@ -124,10 +126,10 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
     &
 
     \raggedright
-    Rearranged to NDF format.
+    Rearrange to NDF format.
 
     \raggedright
-    Stored multiple integrations in HDS container.
+    Store multiple integrations in HDS container files.
 
     \end{tabular}
     \end{centering}
@@ -140,7 +142,7 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 
 \headerbox{UKIRT Instruments}{name=inst,column=2,row=0,above=etransfer}{
     \raggedright
-    The new archive contains data from UKIRT's cassegrain instruments:
+    The archive contains data from UKIRT's cassegrain instruments:
 
     {\center
     \begin{tabular}{cc}
