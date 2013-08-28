@@ -1,28 +1,28 @@
 {
-        "_id" : ObjectId("5176688af9f5db5f13b83ee0"),
-        "group" : null,
+        "_id" :      ObjectId("5176688af9f5db5f13b83ee0"),
+        "group" :    null,
         "filename" : "i19971214_00010.sdf",
         "headers" : [
                 {
-                        "AMEND" : 1.047529,
-                        "AMSTART" : 1.047529,
+                        "AMSTART" :  1.047529,
+                        "AMEND" :    1.047529,
                         "INSTRUME" : "IRCAM3",
-                        "MODE" : "ND_STARE",
-                        "OBJECT" : "HH111",
-                        "OBSTYPE" : "OBJECT",
+                        "MODE" :     "ND_STARE",
+                        "OBJECT" :   "HH111",
+                        "OBSTYPE" :  "OBJECT",
                         // ...
                 },
                 {
-                        "INTNUM" : 1,
-                        "RUTEND" : 10.92177,
+                        "INTNUM" :   1,
+                        "RUTEND" :   10.92177,
                         "RUTSTART" : 10.90462,
                         // ...
                 }
         ],
-        "obs" : 10,
+        "obs" :      10,
         "rawfiles" : [
                 "19971214/odir/o971214_10.sdf",
                 "19971214/idir/i971214_10_1.sdf"
         ],
-        "utdate" : "19971214",
+        "utdate" :   "19971214",
 }
