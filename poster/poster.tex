@@ -1,15 +1,19 @@
 \documentclass[a0paper,portrait]{baposter}
 \usepackage{relsize}
+\renewcommand\RSsmallest{2pt}
 \usepackage{mathpazo}
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage{setspace}
 \usepackage{siunitx}
+\usepackage{color}
+\usetikzlibrary{backgrounds}
 
 \definecolor{u2cgreen}{RGB}{0,60,0}
 \definecolor{u2cyellow}{RGB}{255,255,0}
 \definecolor{u2cltyellow}{RGB}{255,255,255}
+\definecolor{listingfaint}{gray}{0.70}
 
 \setitemize[0]{leftmargin=10pt,labelindent=0pt}
 %\setenumerate[0]{leftmargin=15pt,itemindent=0pt}
@@ -183,71 +187,78 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 \headerbox{Generation of CAOM-2 Metadata}{name=ingestion,column=1,span=2,below=etransfer, above=pipeline}{
     \raggedright
 
-    Size of header database: 3.755\,GiB
+    Size of header database: 3.8\,GiB
 
-    MongoDB intermediate database: \qquad \qquad
-    CAOM-2 XML representation:
-
-\begin{tikzpicture}
-\draw node[text width=2.5in, text ragged, font=\tiny, draw] (mongo) {
+\begin{tikzpicture}[remember picture]
+\draw node[text width=1.5in, text ragged, font=\tiny] (mongo) {
+{\normalsize \bf MongoDB JSON}
+\smaller \begin{tabbing}
 \{ \\
-        "\_id" :      ObjectId("5176688af9f5db5f13b83ee0"), \\
-        "group" :    null, \\
-        "filename" : "i19971214\_00010.sdf", \\
-        "headers" : [ \\
-                \{ \\
-                        "AMSTART" :  1.047529, \\
-                        "AMEND" :    1.047529, \\
-                        "INSTRUME" : "IRCAM3", \\
-                        "MODE" :     "ND\_STARE", \\
-                        "OBJECT" :   "HH111", \\
-                        "OBSTYPE" :  "OBJECT", \\
-                        // ... \\
-                \}, \\
-                \{ \\
-                        "INTNUM" :   1, \\
-                        "RUTEND" :   10.92177, \\
-                        "RUTSTART" : 10.90462, \\
-                        // ... \\
-                \} \\
-        ], \\
-        "obs" :      10, \\
-        "rawfiles" : [ \\
-                "19971214/odir/o971214\_10.sdf", \\
-                "19971214/idir/i971214\_10\_1.sdf" \\
-        ], \\
-        "utdate" :   "19971214", \\
+\quad \quad \= \textcolor{listingfaint}{"\_id" :      ObjectId("5176688af9f5db5f13b83ee0"),} \\
+            \> "group" :    null, \\
+            \> "filename" : "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongofile) {\smaller i19971214\_00010};}.sdf", \\
+            \> "headers" : [ \\
+            \> \quad \quad \=   \{ \\
+            \>             \> \quad \quad \= "AMSTART" :  \quad \= 1.047529, \\
+            \>             \>             \> "AMEND" :    \> 1.047529, \\
+            \>             \>             \> "INSTRUME" : \> "IRCAM3", \\
+            \>             \>             \> "MODE" :     \> "ND\_STARE", \\
+            \>             \>             \> "OBJECT" :   \> "HH111", \\
+            \>             \>             \> "OBSTYPE" :  \> "OBJECT", \\
+            \>             \>             \> \textit{// \ldots} \\
+            \>             \> \}, \\
+            \>             \> \{ \\
+            \>             \>             \> "INTNUM" :   \> 1, \\
+            \>             \>             \> "RUTEND" :   \> 10.92177, \\
+            \>             \>             \> "RUTSTART" : \> 10.90462, \\
+            \>             \>             \> \textit{// \ldots} \\
+            \>             \> \} \\
+            \> ], \\
+            \> "obs" :      10, \\
+            \> "rawfiles" : [ \\
+            \>             \> "19971214/odir/o971214\_10.sdf", \\
+            \>             \> "19971214/idir/i971214\_10\_1.sdf" \\
+            \> ], \\
+            \> "utdate" :   "19971214", \\
 \}
+\end{tabbing}
 };
-\draw node[text width=3.0in, text ragged, font=\tiny, draw, right of=mongo, node distance=3.0in] {
-<caom2:Observation> \\
-  <caom2:collection>UKIRT</caom2:collection> \\
-  <caom2:observationID>i19971214\_00010</caom2:observationID> \\
-  <caom2:metaRelease>1998-12-14T00:00:00.000</caom2:metaRelease> \\
-  <caom2:sequenceNumber>10</caom2:sequenceNumber> \\
-  <caom2:algorithm> \\
-    <caom2:name>exposure</caom2:name> \\
-  </caom2:algorithm> \\
-  <caom2:type>object</caom2:type> \\
-  <caom2:intent>science</caom2:intent> \\
-  <caom2:target> \\
-    <caom2:name>HH111</caom2:name> \\
-  </caom2:target> \\
-  <caom2:telescope> \\
-    <caom2:name>UKIRT</caom2:name> <!-- ... --> \\
-  </caom2:telescope> \\
-  <caom2:instrument> \\
-    <caom2:name>IRCAM</caom2:name> \\
-    <caom2:keywords> \\
-      pol=false magnifier=out detector\_mode=nd\_stare \\
-    </caom2:keywords> \\
-  </caom2:instrument> \\
-  <caom2:environment> \\
-    <caom2:elevation>72.674337141</caom2:elevation> \\
-  </caom2:environment> \\
-  <caom2:planes> <!-- ... --> </caom2:planes> \\
-</caom2:Observation>
+\draw node[text width=2.0in, text ragged, font=\tiny, anchor=north west] at (mongo.north east) {
+{\normalsize \bf CAOM-2 XML Representation}
+\smaller \begin{tabbing}
+<\textcolor{listingfaint}{caom2:}Observation> \\
+\quad \quad \= <\textcolor{listingfaint}{caom2:}collection>\textbf{UKIRT}</\textcolor{listingfaint}{caom2:}collection> \\
+            \> <\textcolor{listingfaint}{caom2:}observationID>\tikz[baseline]{\node[anchor=base,fill=yellow, text width=] (xmlid) {\smaller \bf i19971214\_00010};}</\textcolor{listingfaint}{caom2:}observationID> \\
+            \> <\textcolor{listingfaint}{caom2:}metaRelease>\textbf{1998-12-14T00:00:00.000}</\textcolor{listingfaint}{caom2:}metaRelease> \\
+            \> <\textcolor{listingfaint}{caom2:}sequenceNumber>\textbf{10}</\textcolor{listingfaint}{caom2:}sequenceNumber> \\
+            \> <\textcolor{listingfaint}{caom2:}algorithm> \\
+            \> \quad \quad \= <\textcolor{listingfaint}{caom2:}name>\textbf{exposure}</\textcolor{listingfaint}{caom2:}name> \\
+            \> </\textcolor{listingfaint}{caom2:}algorithm> \\
+            \> <\textcolor{listingfaint}{caom2:}type>\textbf{object}</\textcolor{listingfaint}{caom2:}type> \\
+            \> <\textcolor{listingfaint}{caom2:}intent>\textbf{science}</\textcolor{listingfaint}{caom2:}intent> \\
+            \> <\textcolor{listingfaint}{caom2:}target> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{HH111}</\textcolor{listingfaint}{caom2:}name> \\
+            \> </\textcolor{listingfaint}{caom2:}target> \\
+            \> <\textcolor{listingfaint}{caom2:}telescope> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{UKIRT}</\textcolor{listingfaint}{caom2:}name> \textit{<!-- \ldots{} -->} \\
+            \> </\textcolor{listingfaint}{caom2:}telescope> \\
+            \> <\textcolor{listingfaint}{caom2:}instrument> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{IRCAM}</\textcolor{listingfaint}{caom2:}name> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}keywords> \\
+            \>             \> \quad \quad \= pol=false magnifier=out detector\_mode=nd\_stare \\
+            \>             \> </\textcolor{listingfaint}{caom2:}keywords> \\
+            \> </\textcolor{listingfaint}{caom2:}instrument> \\
+            \> <\textcolor{listingfaint}{caom2:}environment> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}elevation>\textbf{72.674337141}</\textcolor{listingfaint}{caom2:}elevation> \\
+            \> </\textcolor{listingfaint}{caom2:}environment> \\
+            \> <\textcolor{listingfaint}{caom2:}planes> \textit{<!-- \ldots{} -->} </\textcolor{listingfaint}{caom2:}planes> \\
+</\textcolor{listingfaint}{caom2:}Observation>
+\end{tabbing}
 };
+
+\begin{scope}[on background layer]
+\draw[->,>=stealth,green] (mongofile.east) to[out=0,in=180] (xmlid.west);
+\end{scope}
 \end{tikzpicture}
 }
 
