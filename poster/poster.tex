@@ -199,12 +199,12 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
             \> "filename" : "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongofile) {\smaller i19971214\_00010};}.sdf", \\
             \> "headers" : [ \\
             \> \quad \quad \=   \{ \\
-            \>             \> \quad \quad \= "AMSTART" :  \quad \= 1.047529, \\
-            \>             \>             \> "AMEND" :    \> 1.047529, \\
-            \>             \>             \> "INSTRUME" : \> "IRCAM3", \\
-            \>             \>             \> "MODE" :     \> "ND\_STARE", \\
-            \>             \>             \> "OBJECT" :   \> "HH111", \\
-            \>             \>             \> "OBSTYPE" :  \> "OBJECT", \\
+            \>             \> \quad \quad \= "AMSTART" :  \quad \= \tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongoamstart) {\smaller 1.047529};}, \\
+            \>             \>             \> "AMEND" :          \> \tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongoamend) {\smaller 1.047529};}, \\
+            \>             \>             \> "INSTRUME" :       \> "IRCAM3", \\
+            \>             \>             \> "MODE" :           \> "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongomode) {\smaller ND\_STARE};}", \\
+            \>             \>             \> "OBJECT" :         \> "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongoobject) {\smaller HH111};}", \\
+            \>             \>             \> "OBSTYPE" :        \> "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongotype) {\smaller OBJECT};}", \\
             \>             \>             \> \textit{// \ldots} \\
             \>             \> \}, \\
             \>             \> \{ \\
@@ -214,12 +214,12 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
             \>             \>             \> \textit{// \ldots} \\
             \>             \> \} \\
             \> ], \\
-            \> "obs" :      10, \\
+            \> "obs" :      \tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongoobs) {\smaller 10};}, \\
             \> "rawfiles" : [ \\
             \>             \> "19971214/odir/o971214\_10.sdf", \\
             \>             \> "19971214/idir/i971214\_10\_1.sdf" \\
             \> ], \\
-            \> "utdate" :   "19971214", \\
+            \> "utdate" :   "\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (mongodate) {\smaller 19971214};}", \\
 \}
 \end{tabbing}
 };
@@ -229,27 +229,27 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 <\textcolor{listingfaint}{caom2:}Observation> \\
 \quad \quad \= <\textcolor{listingfaint}{caom2:}collection>\textbf{UKIRT}</\textcolor{listingfaint}{caom2:}collection> \\
             \> <\textcolor{listingfaint}{caom2:}observationID>\tikz[baseline]{\node[anchor=base,fill=yellow, text width=] (xmlid) {\smaller \bf i19971214\_00010};}</\textcolor{listingfaint}{caom2:}observationID> \\
-            \> <\textcolor{listingfaint}{caom2:}metaRelease>\textbf{1998-12-14T00:00:00.000}</\textcolor{listingfaint}{caom2:}metaRelease> \\
-            \> <\textcolor{listingfaint}{caom2:}sequenceNumber>\textbf{10}</\textcolor{listingfaint}{caom2:}sequenceNumber> \\
+            \> <\textcolor{listingfaint}{caom2:}metaRelease>\tikz[baseline]{\node[anchor=base,fill=yellow, text width=] (xmldate) {\smaller \bf 1998-12-14T00:00:00.000};}</\textcolor{listingfaint}{caom2:}metaRelease> \\
+            \> <\textcolor{listingfaint}{caom2:}sequenceNumber>\tikz[baseline]{\node[anchor=base,fill=yellow, text width=] (xmlobs) {\smaller \bf 10};}</\textcolor{listingfaint}{caom2:}sequenceNumber> \\
             \> <\textcolor{listingfaint}{caom2:}algorithm> \\
             \> \quad \quad \= <\textcolor{listingfaint}{caom2:}name>\textbf{exposure}</\textcolor{listingfaint}{caom2:}name> \\
             \> </\textcolor{listingfaint}{caom2:}algorithm> \\
-            \> <\textcolor{listingfaint}{caom2:}type>\textbf{object}</\textcolor{listingfaint}{caom2:}type> \\
             \> <\textcolor{listingfaint}{caom2:}intent>\textbf{science}</\textcolor{listingfaint}{caom2:}intent> \\
             \> <\textcolor{listingfaint}{caom2:}target> \\
-            \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{HH111}</\textcolor{listingfaint}{caom2:}name> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}name>\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (xmlobject) {\smaller \bf HH111};}</\textcolor{listingfaint}{caom2:}name> \\
             \> </\textcolor{listingfaint}{caom2:}target> \\
+            \> <\textcolor{listingfaint}{caom2:}type>\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (xmltype) {\smaller \bf object};}</\textcolor{listingfaint}{caom2:}type> \\
             \> <\textcolor{listingfaint}{caom2:}telescope> \\
             \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{UKIRT}</\textcolor{listingfaint}{caom2:}name> \textit{<!-- \ldots{} -->} \\
             \> </\textcolor{listingfaint}{caom2:}telescope> \\
             \> <\textcolor{listingfaint}{caom2:}instrument> \\
             \>             \> <\textcolor{listingfaint}{caom2:}name>\textbf{IRCAM}</\textcolor{listingfaint}{caom2:}name> \\
             \>             \> <\textcolor{listingfaint}{caom2:}keywords> \\
-            \>             \> \quad \quad \= pol=false magnifier=out detector\_mode=nd\_stare \\
+            \>             \> \quad \quad \= pol=false magnifier=out detector\_mode=\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (xmlmode) {\smaller nd\_stare};} \\
             \>             \> </\textcolor{listingfaint}{caom2:}keywords> \\
             \> </\textcolor{listingfaint}{caom2:}instrument> \\
             \> <\textcolor{listingfaint}{caom2:}environment> \\
-            \>             \> <\textcolor{listingfaint}{caom2:}elevation>\textbf{72.674337141}</\textcolor{listingfaint}{caom2:}elevation> \\
+            \>             \> <\textcolor{listingfaint}{caom2:}elevation>\tikz[baseline]{\node[anchor=base,fill=yellow,text width=] (xmlelevation) {\smaller \bf 72.674337141};}</\textcolor{listingfaint}{caom2:}elevation> \\
             \> </\textcolor{listingfaint}{caom2:}environment> \\
             \> <\textcolor{listingfaint}{caom2:}planes> \textit{<!-- \ldots{} -->} </\textcolor{listingfaint}{caom2:}planes> \\
 </\textcolor{listingfaint}{caom2:}Observation>
@@ -258,6 +258,15 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 
 \begin{scope}[on background layer]
 \draw[->,>=stealth,green] (mongofile.east) to[out=0,in=180] (xmlid.west);
+\draw[->,>=stealth,green] (mongoobject.east) to[out=0,in=180] (xmlobject.west);
+\draw[->,>=stealth,green] (mongotype.east) to[out=0,in=180] (xmltype.west);
+\draw[->,>=stealth,green] (mongomode.east) to[out=0,in=100] (xmlmode.north);
+\draw[->,>=stealth,green] (mongoobs.east) to[out=0,in=270] (xmlobs.south);
+\draw[->,>=stealth,green] (mongodate.east) to[out=0,in=270] (xmldate.south);
+
+\node (mongobrace) at ($(mongoamstart.east)!0.5!(mongoamend.east) + (1ex,0)$) {\textcolor{green}{\}}};
+\draw[->,>=stealth,green] (mongobrace.east) to[out=350,in=120] (xmlelevation.north);
+
 \end{scope}
 \end{tikzpicture}
 }
