@@ -64,11 +64,19 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
         in the WFCAM Science Archive in
         Edinburgh.
 
+        \item Data archived in as close to its original raw format as possible.
+
     \end{itemize}
+
+    Illustration of the processes involved in preparing the archive:
+
+    \quad
 
     \includegraphics[scale=0.5]{../gfx/flow-crop}
 
     \quad
+
+    \vspace{2.0in}
 
     \begin{centering}
     \begin{tabular}{ll}
@@ -76,8 +84,6 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
     Raw data size: & 2.147\,TiB
     \end{tabular}
     \end{centering}
-
-    \vspace{3.5in}
 }
 
 \headerbox{CAOM-2}{name=caom2,column=1,row=0}{
@@ -103,8 +109,6 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
     \raggedright
 
     \begin{itemize}
-    \item Data archived in as close to its original raw format as possible.
-
     \item Filenames standardized following our current convention.
 
     \item Minor changes made to files as they were staged for transfer,
@@ -185,12 +189,27 @@ Graham Bell$^1$, Malcolm Currie$^1$, Russell Redman$^2$, Maren Purves$^1$, Tim J
 }
 
 \headerbox{Generation of CAOM-2 Metadata}{name=ingestion,column=1,span=2,below=etransfer, above=pipeline}{
-    \raggedright
-
-    Size of header database: 3.8\,GiB
 
 \begin{tikzpicture}[remember picture]
-\draw node[text width=1.5in, text ragged, font=\tiny] (mongo) {
+\draw node[text width=2.5in, text ragged] (caom2descr) {
+    \vspace{-2ex}
+    \begin{itemize}
+    \item Metadata ingestion process split into two parts:
+
+    \begin{itemize}
+    \item Read headers from data files into an intermediate database.
+
+    \item Write XML files using the pyCAOM2 library, and send to the repository.
+    \end{itemize}
+
+    \item Using MongoDB for the intermediate database allowed the
+    headers to be stored without prior knowledge of their structure.
+
+    \end{itemize}
+
+    Size of header database: 3.8\,GiB
+};
+\draw node[text width=1.5in, text ragged, font=\tiny, anchor=north west, xshift=2ex, yshift=-2ex] at (caom2descr.north east) (mongo) {
 {\normalsize \bf MongoDB JSON}
 \smaller \begin{tabbing}
 \{ \\
