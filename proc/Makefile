@@ -1,6 +1,8 @@
 all: proc.pdf
 
-%.dvi: %.tex
+%.dvi: %.tex %.bib
+	latex $<
+	bibtex $(<:.tex=)
 	latex $<
 	latex $<
 
