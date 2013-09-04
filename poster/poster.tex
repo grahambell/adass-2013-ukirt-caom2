@@ -116,30 +116,44 @@ Graham Bell,$^1$ Malcolm Currie,$^1$ Russell Redman,$^2$ Maren Purves,$^1$ Tim J
     \end{itemize}
 
     \begin{centering}
-    \begin{tabular}{p{1.8in} p{1.8in} p{1.8in}}
+    \begin{tabular}[t]{ccc}
     \textbf{FITS} & \textbf{NDF} & \textbf{DST} \\
 
+    \parbox[t]{1.8in}{\begin{itemize}[label={--},topsep=0pt]
     \raggedright
+    \item
     Header fixes to pass \texttt{fitsverify},
     e.g. removal of trailing \texttt{Z} in date headers.
+    \end{itemize}}
 
     &
 
+    \parbox[t]{1.8in}{\begin{itemize}[label={--},topsep=0pt]
     \raggedright
+    \item
     If multiple integrations are separate files,
     store in an HDS container file.
     %with a standardized filename.
+    \end{itemize}}
 
     &
 
+    \parbox[t]{1.8in}{\begin{itemize}[label={--},topsep=0pt]
     \raggedright
+    \item
     Rearrange to NDF format.
 
     \raggedright
+    \item
     Store multiple integrations in HDS container files.
+    \end{itemize}}
 
     \end{tabular}
     \end{centering}
+
+    \quad
+
+    \quad
 
     \smaller[2]
     \textbf{HDS}: Starlink Hierarchical Data System. \\
