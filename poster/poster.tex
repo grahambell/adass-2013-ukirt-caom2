@@ -178,28 +178,62 @@ Graham Bell,$^1$ Malcolm Currie,$^1$ Russell Redman,$^2$ Maren Purves,$^1$ Tim J
     \end{tabular}}
 }
 
-\headerbox{Data Reduction Pipeline}{name=pipeline,column=0,span=2,below=intro,above=bottom}{
+\headerbox{Data Reduction}{name=pipeline,column=2,span=1,below=intro,above=bottom}{
     \raggedright
 
     \begin{itemize}
-    \item Generate reduced data products. Use same infrastructure at CADC for JSA to generate reduced products.
+    \item Plan to generate reduced data products using the ORAC-DR pipeline.
+
+    \begin{itemize}
+    \item ORAC-DR already been used for these instruments (except CGS3).
+    \end{itemize}
+
+    \item Will use similar infrastructure at CADC as is already
+    used in the JCMT Science Archive.
+
+    \item Reduce a complete night at once allowing
+    ORAC-DR to find the required calibrations.
+
+    \item Currently testing the ORAC-DR on a range of data.
+    For observations pre-dating its introduction:
+
+    \begin{itemize}
+
+    \item Some header changes can be handled by updating the
+    \texttt{Astro::FITS::HdrTrans} module.
+
+    \item Other information such as grouping and recipe names
+    must be provided, based on the intermediate database.
+
+    \end{itemize}
     \end{itemize}
 
     \vspace{1.5in}
 }
 
-\headerbox{Example}{name=example,column=2,below=intro,above=bottom}{
+\headerbox{Example Pipeline Products}{name=example,column=0,span=2,below=intro,above=bottom}{
     \raggedright
 
-    \includegraphics[scale=0.35,angle=270]{../gfx/hh111}
 
-    Example IRCAM image of HH\,111 from 1997.
+    IRCAM image of HH\,111 from 1997:
 
-    i,o files merged.
+    \begin{tabular}[t]{ll}
+    \includegraphics[scale=0.5,angle=270]{../gfx/hh111}
+    &
+    \parbox[t]{1.5in}{
+    \raggedright
+    \begin{itemize}[topsep=0pt]
+    \item
+    Separate files merged.
 
+    \item
     Grouping and recipe headers deduced.
 
-    Processed with JITTER\_SELF\_FLAT ORAC-DR recipe.
+    \item
+    Processed with \texttt{JITTER\_SELF\_FLAT} ORAC-DR recipe.
+    \end{itemize}
+    }
+    \end{tabular}
 }
 
 \headerbox{Generation of CAOM-2 Metadata}{name=ingestion,column=1,span=2,below=etransfer, above=pipeline}{
