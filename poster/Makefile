@@ -1,4 +1,4 @@
-all: poster.pdf
+all: P01.pdf
 
 %.pdf: %.tex
 	pdflatex $<
