@@ -1,4 +1,4 @@
-all: proc.pdf
+all: P01.pdf
 
 %.dvi: %.tex %.bib
 	latex $<
