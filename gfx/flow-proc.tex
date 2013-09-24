@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[a3paper,landscape]{geometry}
+\usepackage{tikz}
+\usepackage{txfonts}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning,patterns,snakes}
+
+\tikzstyle{link} = [draw, thick]
+
+\tikzstyle{every entity} = [draw, thick, top color=white, draw=black, minimum width=6em, minimum height=3em]
+
+\tikzstyle{data} = [rectangle, bottom color=white, every entity]
+
+\tikzstyle{action} = [ellipse, bottom color=white, draw=black, every entity]
+
+\pagestyle{empty}
+\begin{document}
+
+\input{flow-picture}
+
+\end{document}
