@@ -29,7 +29,7 @@ The desire was to archive the raw data in as close to its original
 format as possible.  Where the data followed our current convention
 of having a single data file per observation, it was archived
 without alteration, except for minor fixes to headers of data in
-FITS format to allow it to pass fitsverify and be accepted by CADC.
+FITS format to allow it to pass \texttt{fitsverify} and be accepted by CADC.
 Some of the older data comprised multiple integrations in separate
 files per observation, stored in either NDF or DST format. These
 were placed inside HDS container files, and DST files were rearranged
@@ -37,8 +37,8 @@ into NDF format.
 
 The metadata describing the observations is
 ingested into the CAOM-2 repository via an
-intermediate MongoDB header database, which will
-also be used to guide the ORAC-DR pipeline
+intermediate \texttt{MongoDB} header database, which will
+also be used to guide the \texttt{ORAC-DR} pipeline
 in generating reduced data products.
 \end{abstract}
 
@@ -175,7 +175,7 @@ volume of header data involved (3.8\,GiB).
 
 \section{Data Reduction Pipeline}
 
-The final stage is to run the ORAC-DR pipeline
+The final stage is to run the \texttt{ORAC-DR} pipeline
 \citep{1999ASPC..172...11E,2008AN....329..295C}
 to generate reduced
 data products.
@@ -184,7 +184,7 @@ used in the JCMT Science Archive
 \citep{2011ASPC..442..203E}
 and will reduce a complete night at once allowing
 the pipeline to find the required calibrations.
-ORAC-DR already been used for all of the instruments
+\texttt{ORAC-DR} already been used for all of the instruments
 involved except for CGS3.
 
 We are currently testing the pipeline on a range of data,
@@ -192,7 +192,7 @@ including that predating its introduction.
 Some header changes can be handled by updating the
 \texttt{Astro::FITS::HdrTrans} module
 \citep[section 2.2]{2008AN....329..295C}
-which is used by ORAC-DR to convert
+which is used by \texttt{ORAC-DR} to convert
 instrument specific header information into
 a common set of generic headers.
 
