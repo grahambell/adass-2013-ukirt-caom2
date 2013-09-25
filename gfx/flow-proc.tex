@@ -10,7 +10,7 @@
 
 \tikzstyle{link} = [draw, thick]
 
-\tikzstyle{every entity} = [draw, thick, top color=white, draw=black, minimum width=6em, minimum height=3em]
+\tikzstyle{every entity} = [draw, thick, top color=white, draw=black, minimum width=6em, minimum height=2em]
 
 \tikzstyle{data} = [rectangle, bottom color=white, every entity]
 
@@ -19,6 +19,8 @@
 \pagestyle{empty}
 \begin{document}
 
+\begin{tikzpicture} [node distance=4em, every edge/.style={link, stealth-}]
 \input{flow-picture}
+\end{tikzpicture}
 
 \end{document}

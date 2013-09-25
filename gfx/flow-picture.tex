@@ -1,5 +1,3 @@
-\begin{tikzpicture} [node distance=5em, every edge/.style={link, stealth-}]
-
 % Finding Files
 
 \node[action] (find) [] {Find Files};
@@ -34,6 +32,3 @@
 \node[action] (pipeline) [below of=filearchive] {ORAC-DR Pipeline} edge (filearchive) edge [in=180,out=0] (database.west);
 
 \node[data] (product) [below of=pipeline] {Reduced Data Product Archive} edge (pipeline);
-
-\end{tikzpicture}
-
