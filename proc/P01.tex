@@ -55,19 +55,125 @@ CAOM-2 \citep{2012ASPC..461..339D}
 
 WSA \citep{2008MNRAS.384..637H}
 
+\ldots
+
+A new archive of raw data from the United Kingdom Infrared
+Telescope (UKIRT) is being constructed at the Canadian Astronomy
+Data Centre (CADC).
+
+It excludes data from the Wide Field Camera (WFCAM),
+since it is already available in the WFCAM Science Archive in
+Edinburgh.
+
+Data archived in as close to its original raw format as possible.
+
+Includes raw and reduced data.
+
 \articlefigure[]{P01_f1}{p01:fig:flowchart}{A flowchart.}
+
+\subsection{Instruments}
+
+The archive contains data from UKIRT's cassegrain instruments
+listed in table~\ref{p01:tab:instruments}.
+
+\begin{table}[!ht]
+\caption{Instruments with no stop}
+\smallskip
+\begin{center}
+\begin{tabular}{lcr}
+\tableline
+\noalign{\smallskip}
+Instrument & Type & Wavelength \\
+\noalign{\smallskip}
+\tableline
+\noalign{\smallskip}
+CGS3 & spectrometer  & 10--20\,\micron \\
+CGS4 & spectrometer & 1--5\,\micron \\
+IRCAM3 & imager & 1--5\,\micron \\
+Michelle & imager/spectrometer & 8--25\,\micron  \\
+UFTI & imager & 1--2.5\,\micron \\
+UIST & imager/spectrometer & 1--5\,\micron  \\
+\noalign{\smallskip}
+\tableline
+\end{tabular}
+\end{center}
+\label{p01:tab:instruments}
+\end{table}
+
+\subsection{CAOM-2}
+
+CAOM-2 is the next generation of the Common Archive Observation Model
+currently being developed at CADC.
+
+Standardizes the core parts of the archive
+between various ``collections''.
+
+Uses a single ``advanced search'' interface for all collections.
+
+UKIRT added as a new collection.
 
 \section{Transfer of Data to CADC}
 
 Electronic Transfer \citep{2005ASPC..347..647M}
 
-NDF \citep{P91_adassxxiii}
+NDF \citep[see, for example,][]{P91_adassxxiii}
 
 \ldots
+
+Filenames standardized following our current convention.
+
+Minor changes made to files as they were staged for transfer,
+depending on format:
+
+\begin{description}
+\item[FITS] \quad \\
+
+\begin{itemize}
+\item
+Header fixes to pass \texttt{fitsverify},
+e.g. removal of trailing \texttt{Z} in date headers.
+\end{itemize}
+
+\item[NDF] \quad \\
+
+\begin{itemize}
+\item
+If multiple integrations are separate files,
+store in an HDS container file.
+\end{itemize}
+
+\item[DST] \quad \\
+
+\begin{itemize}
+\item
+Rearrange to NDF format.
+
+\item
+Store multiple integrations in HDS container files.
+\end{itemize}
+\end{description}
+
+\textbf{HDS}: Starlink Hierarchical Data System. \\
+\textbf{NDF}: Starlink Extensible N-Dimensional Data Format (an HDS format). \\
+\textbf{DST}: Figaro Format (an HDS format). \\
+
 
 \section{Ingestion of Metadata into CAOM-2}
 
 \ldots
+
+Metadata ingestion process split into two parts:
+
+\begin{itemize}
+\item Read headers from data files into an intermediate database.
+
+\item Write XML files using the \texttt{pyCAOM2} library, and send to the repository.
+\end{itemize}
+
+Using \texttt{MongoDB} for the intermediate database allowed the
+headers to be stored without prior knowledge of their structure.
+
+Size of header database: 3.8\,GiB
 
 \section{Data Reduction Pipeline}
 
@@ -78,6 +184,24 @@ HdrTrans \citep[section 2.2]{2008AN....329..295C}
 JSA \citep{2011ASPC..442..203E}
 
 \ldots
+
+Plan to generate reduced data products using the ORAC-DR pipeline.
+ORAC-DR already been used for these instruments (except CGS3).
+
+Will use similar infrastructure at CADC as is already
+used in the JCMT Science Archive.
+
+Reduce a complete night at once allowing
+ORAC-DR to find the required calibrations.
+
+Currently testing the ORAC-DR on a range of data.
+For observations pre-dating its introduction:
+
+Some header changes can be handled by updating the
+\texttt{Astro::FITS::HdrTrans} module.
+
+Other information such as grouping and recipe names
+must be provided, based on the intermediate database.
 
 \section{Conclusions}
 
