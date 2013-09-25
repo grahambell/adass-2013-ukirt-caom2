@@ -114,49 +114,51 @@ UKIRT added as a new collection.
 
 \section{Transfer of Data to CADC}
 
-Electronic Transfer \citep{2005ASPC..347..647M}
+The raw data were transferred to the archive at CADC
+using the
+Electronic Transfer system \citep{2005ASPC..347..647M}.
+The files were copied to a ``new'' directory in a
+staging area where the system agent would
+detect them and automate their transfer to the
+archive, deleting them when this was complete.
+Any files rejected by the agent were instead moved
+to one of several ``reject'' directories depending
+on the reason.
 
-NDF \citep[see, for example,][]{P91_adassxxiii}
+As the files were staged for transfer,
+filenames were standardized following our current convention.
+In addition,
+some minor adjustments were made,
+depending on the format of the file.
 
-\ldots
+\altsubsubsection*{FITS}
 
-Filenames standardized following our current convention.
+Some early raw data from UFTI was written in FITS format.
+For transfer to the archive, these files were
+required to pass
+\texttt{fitsverify},
+and this required a few fixes to the headers.
+One example was the removal of \texttt{Z} characters
+previously used to indicate UTC in date headers.
 
-Minor changes made to files as they were staged for transfer,
-depending on format:
+\altsubsubsection*{NDF}
 
-\begin{description}
-\item[FITS] \quad \\
+Much of the data were stored directly in
+Starlink extensible N-dimensional Data Format
+\citep[NDF, see for example,][]{P91_adassxxiii},
+which itself is based on the
+Starlink Hierarchical Data System (HDS).
+In cases where an observation was recorded as
+multiple integrations in separate files,
+these were stored in a single HDS container file.
 
-\begin{itemize}
-\item
-Header fixes to pass \texttt{fitsverify},
-e.g. removal of trailing \texttt{Z} in date headers.
-\end{itemize}
+\altsubsubsection*{DST}
 
-\item[NDF] \quad \\
-
-\begin{itemize}
-\item
-If multiple integrations are separate files,
-store in an HDS container file.
-\end{itemize}
-
-\item[DST] \quad \\
-
-\begin{itemize}
-\item
-Rearrange to NDF format.
-
-\item
-Store multiple integrations in HDS container files.
-\end{itemize}
-\end{description}
-
-\textbf{HDS}: Starlink Hierarchical Data System. \\
-\textbf{NDF}: Starlink Extensible N-Dimensional Data Format (an HDS format). \\
-\textbf{DST}: Figaro Format (an HDS format). \\
-
+Data stored in the older Figaro Format
+--- which is also based on HDS ---
+were converted to NDF.
+As for raw NDF files, multiple integrations
+were stored in HDS container files.
 
 \section{Ingestion of Metadata into CAOM-2}
 
