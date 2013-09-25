@@ -44,35 +44,21 @@ file for each observation and sends this file to the repository.
 
 \section{Introduction}
 
-\ldots
-
-CAOM-2 \citep{2012ASPC..461..339D}
-
-WSA \citep{2008MNRAS.384..637H}
-
-\ldots
-
-A new archive of raw data from the United Kingdom Infrared
+A new archive of legacy data from the United Kingdom Infrared
 Telescope (UKIRT) is being constructed at the Canadian Astronomy
 Data Centre (CADC).
-
+The archive contains data from UKIRT's cassegrain instruments,
+as listed in table~\ref{p01:tab:instruments}.
 It excludes data from the Wide Field Camera (WFCAM),
-since it is already available in the WFCAM Science Archive in
-Edinburgh.
-
-Data archived in as close to its original raw format as possible.
-
-Includes raw and reduced data.
-
-\articlefigure[]{P01_f1}{p01:fig:flowchart}{A flowchart.}
-
-\subsection{Instruments}
-
-The archive contains data from UKIRT's cassegrain instruments
-listed in table~\ref{p01:tab:instruments}.
+since it is already available in the WFCAM Science Archive
+\citep{2008MNRAS.384..637H}
+in Edinburgh.
+The archive is to includes raw and reduced data,
+with the raw data
+kept in as close to its original raw format as possible.
 
 \begin{table}[!ht]
-\caption{Instruments with no stop}
+\caption{Instruments for which data is included in the new archive}
 \smallskip
 \begin{center}
 \begin{tabular}{lcr}
@@ -95,17 +81,26 @@ UIST & imager / spectrometer with integral field unit & 1--5\,\micron  \\
 \label{p01:tab:instruments}
 \end{table}
 
-\subsection{CAOM-2}
-
-CAOM-2 is the next generation of the Common Archive Observation Model
+The archive is based on CAOM-2 \citep{2012ASPC..461..339D},
+the next generation of the Common Archive Observation Model
 currently being developed at CADC.
+This standardizes the core parts of the archive
+between various ``collections''
+and provides
+a single ``advanced search'' interface for all of them.
+UKIRT has been added as a new collection.
 
-Standardizes the core parts of the archive
-between various ``collections''.
+At the start of this project, the raw data had already
+been read from archive tapes stored at the
+Joint Astronomy Centre and organised on disk.
+The process of transferring it to CADC,
+reading the headers to generate the metadata
+for CAOM-2 and running the data reduction
+pipeline
+is illustrated in figure~\ref{p01:fig:flowchart}.
 
-Uses a single ``advanced search'' interface for all collections.
-
-UKIRT added as a new collection.
+\articlefigure[]{P01_f1}{p01:fig:flowchart}{Diagram illustrating
+the process of constructing the UKIRT legacy data archive.}
 
 \section{Transfer of Data to CADC}
 \label{p01:sec:etransfer}
