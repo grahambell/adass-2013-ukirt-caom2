@@ -40,11 +40,6 @@ was broken into two stages.  First the headers were read from
 the data files and stored in an intermediate MongoDB database.
 Then the ingestion process uses this database to generate an XML
 file for each observation and sends this file to the repository.
-
-The final stage is to run the ORAC-DR pipeline to generate reduced
-data products.  The intermediate database can be used to identify
-groups of observations to be processed together and to supply
-additional data where the original headers were insufficient.
 \end{abstract}
 
 \section{Introduction}
@@ -113,6 +108,7 @@ Uses a single ``advanced search'' interface for all collections.
 UKIRT added as a new collection.
 
 \section{Transfer of Data to CADC}
+\label{p01:sec:etransfer}
 
 The raw data were transferred to the archive at CADC
 using the
@@ -184,33 +180,42 @@ volume of header data involved (3.8\,GiB).
 
 \section{Data Reduction Pipeline}
 
-ORAC-DR \citep{1999ASPC..172...11E,2008AN....329..295C}
+The final stage is to run the ORAC-DR pipeline
+\citep{1999ASPC..172...11E,2008AN....329..295C}
+to generate reduced
+data products.
+This will use similar infrastructure at CADC as is already
+used in the JCMT Science Archive
+\citep{2011ASPC..442..203E}
+and will reduce a complete night at once allowing
+the pipeline to find the required calibrations.
+ORAC-DR already been used for all of the instruments
+involved except for CGS3.
 
-HdrTrans \citep[section 2.2]{2008AN....329..295C}
-
-JSA \citep{2011ASPC..442..203E}
-
-\ldots
-
-Plan to generate reduced data products using the ORAC-DR pipeline.
-ORAC-DR already been used for these instruments (except CGS3).
-
-Will use similar infrastructure at CADC as is already
-used in the JCMT Science Archive.
-
-Reduce a complete night at once allowing
-ORAC-DR to find the required calibrations.
-
-Currently testing the ORAC-DR on a range of data.
-For observations pre-dating its introduction:
-
+We are currently testing the pipeline on a range of data,
+including that predating its introduction.
 Some header changes can be handled by updating the
-\texttt{Astro::FITS::HdrTrans} module.
+\texttt{Astro::FITS::HdrTrans} module
+\citep[section 2.2]{2008AN....329..295C}
+which is used by ORAC-DR to convert
+instrument specific header information into
+a common generic set of headers.
 
-Other information such as grouping and recipe names
-must be provided, based on the intermediate database.
+In other cases the original headers are insufficient,
+for example in allowing the pipeline to
+select a data reduction recipe and determine the
+grouping of the files.
+Therefore the intermediate database of header information
+can be re-used to identify
+the groups of observations to be processed together and to infer
+additional headers.
 
-\articlefigure[angle=270,scale=0.5]{P01_f2}{p01:fig:hh111}{Example image.}
+\articlefigure[angle=270,scale=0.5]{P01_f2}{p01:fig:hh111}{Example image
+of HH\,111 observed with IRCAM3 in 1997.  Separate integration files
+have been merged into a single file per observation
+(as described in section~\ref{p01:sec:etransfer}) and the grouping
+and additional headers were derived from the intermediate header
+database, allowing the pipeline to process the data.}
 
 \section{Conclusions}
 
