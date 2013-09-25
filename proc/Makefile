@@ -1,6 +1,6 @@
 all: P01.pdf
 
-P01.ps: P01.tex P01_f1.eps
+P01.dvi: P01.tex P01_f1.eps P01_f2.eps
 
 %.dvi: %.tex %.bib
 	latex $<
@@ -15,4 +15,7 @@ P01.ps: P01.tex P01_f1.eps
 	ps2pdf14 $<
 
 P01_f1.eps: ../gfx/flow-proc-crop.eps
+	cp $< $@
+
+P01_f2.eps: ../gfx/hh111.eps
 	cp $< $@
