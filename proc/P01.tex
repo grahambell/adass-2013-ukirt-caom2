@@ -162,20 +162,25 @@ were stored in HDS container files.
 
 \section{Ingestion of Metadata into CAOM-2}
 
-\ldots
+The metadata ingestion process was split into two stages.
+First the headers were
+read from the data files into an intermediate
+\texttt{MongoDB} database.
+Then for each observation an XML file was written
+using the \texttt{pyCAOM2} library,
+and sent to the CAOM-2 repository.
+Both of these steps were quite time-consuming
+and so separating them was very useful
+as it allowed them to be developed
+independently.
 
-Metadata ingestion process split into two parts:
-
-\begin{itemize}
-\item Read headers from data files into an intermediate database.
-
-\item Write XML files using the \texttt{pyCAOM2} library, and send to the repository.
-\end{itemize}
-
-Using \texttt{MongoDB} for the intermediate database allowed the
-headers to be stored without prior knowledge of their structure.
-
-Size of header database: 3.8\,GiB
+\texttt{MongoDB} was chosen for the intermediate database
+as it allowed the
+headers to be stored without prior knowledge of their structure
+--- they were read in as Python dictionaries and
+stored directly in the database.
+It was also able easily to handle the large
+volume of header data involved (3.8\,GiB).
 
 \section{Data Reduction Pipeline}
 
