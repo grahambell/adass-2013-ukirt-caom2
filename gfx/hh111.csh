@@ -1,5 +1,5 @@
-source /stardev/etc/cshrc
-source /stardev/etc/login
+source ${STARLINK_DIR}/etc/cshrc
+source ${STARLINK_DIR}/etc/login
 
 kappa
 
