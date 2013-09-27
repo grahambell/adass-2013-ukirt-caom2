@@ -21,12 +21,10 @@
 \begin{abstract}
 We describe a  new archive of legacy data from the United Kingdom Infrared
 Telescope (UKIRT) at the Canadian Astronomy
-Data Centre (CADC).  It contains all available data apart from
-that from the Wide Field Camera (WFCAM), which is already
-accessible from the WFCAM Science Archive.
-
+Data Centre (CADC) containing all available data
+from the Cassegrain instruments.
 The desire was to archive the raw data in as close to its original
-format as possible.  Where the data followed our current convention
+format as possible, so where the data followed our current convention
 of having a single data file per observation, it was archived
 without alteration, except for minor fixes to headers of data in
 FITS format to allow it to pass \texttt{fitsverify} and be accepted by CADC.
@@ -34,7 +32,6 @@ Some of the older data comprised multiple integrations in separate
 files per observation, stored in either NDF or DST format. These
 were placed inside HDS container files, and DST files were rearranged
 into NDF format.
-
 The metadata describing the observations is
 ingested into the CAOM-2 repository via an
 intermediate \texttt{MongoDB} header database, which will
@@ -47,10 +44,10 @@ in generating reduced data products.
 A new archive of legacy data from the United Kingdom Infrared
 Telescope (UKIRT) is being constructed at the Canadian Astronomy
 Data Centre (CADC).
-The archive contains data from UKIRT's Cassegrain instruments,
-as listed in table~\ref{p01:tab:instruments}.
-It excludes data from the Wide Field Camera (WFCAM),
-since it is already available in the WFCAM Science Archive
+The archive contains data from UKIRT's Cassegrain instruments
+--- listed in Table~\ref{p01:tab:instruments} ---
+but excludes the Wide Field Camera (WFCAM),
+since its data is already available in the WFCAM Science Archive
 \citep{2008MNRAS.384..637H}
 in Edinburgh.
 The archive is to include raw and reduced data,
@@ -89,7 +86,8 @@ This standardizes the core parts of the archive
 between various \textit{collections}
 and provides
 a single ``advanced search'' interface for all of them.
-UKIRT has been added as a new collection.
+UKIRT has been added to the repository
+as a new collection.
 
 At the start of this project, the raw data had already
 been read from archive tapes stored at the
@@ -120,7 +118,7 @@ detect them and automate their transfer to the
 archive, deleting them when this was complete.
 Any files rejected by the agent were instead moved
 to one of several \textit{reject} directories depending
-on the reason.
+on the cause for rejection.
 
 As the files were staged for transfer,
 filenames were standardized following our current convention.
@@ -134,7 +132,7 @@ Some early raw data from UFTI were written in FITS format.
 For transfer to the archive, these files were
 required to pass
 \texttt{fitsverify},
-and this required a few fixes to the headers.
+and this needed a few fixes to the headers.
 One example was the removal of \texttt{Z} characters
 previously used to indicate UTC in date headers.
 
@@ -210,6 +208,8 @@ Therefore the intermediate database of header information
 can be re-used to identify
 the groups of observations to be processed together and to infer
 additional headers.
+An example image reduced by this process is given in
+figure~\ref{p01:fig:hh111}.
 
 \articlefigure[angle=270,scale=0.5]{P01_f2}{p01:fig:hh111}{Example image
 of HH\,111 observed with IRCAM3 in 1997.  Separate integration files
