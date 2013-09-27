@@ -211,29 +211,33 @@ Graham Bell,$^1$ Malcolm Currie,$^1$ Russell Redman,$^2$ Maren Purves,$^1$ Tim J
     \vspace{1.5in}
 }
 
-\headerbox{Example Pipeline Products}{name=example,column=0,span=2,below=intro,above=bottom}{
+\headerbox{Example Pipeline Image}{name=example,column=0,span=2,below=intro,above=bottom}{
     \raggedright
 
-
-    IRCAM3 image of HH\,111 from 1997:
-
-    \begin{tabular}[t]{ll}
-    \includegraphics[scale=0.5,angle=270]{../gfx/hh111}
-    &
-    \parbox[t]{1.5in}{
-    \raggedright
     \begin{itemize}[topsep=0pt]
     \item
-    Separate files merged.
+    Separate raw files merged into one file per observation for e-transfer / pipeline processing.
 
     \item
-    Grouping and recipe headers deduced.
+    Observation grouping and recipe headers determined from the intermediate database.
 
     \item
-    Processed with \texttt{JITTER\_SELF\_FLAT} ORAC-DR recipe.
+    Processed with the normal \texttt{JITTER\_SELF\_FLAT} recipe in ORAC-DR.
     \end{itemize}
-    }
+
+
+    \begin{tabular}{c}
+    \includegraphics[scale=0.7,angle=270]{../gfx/hh111} \\
+    \textbf{HH\,111 protostellar outflows observed with IRCAM3 in 1997.}
     \end{tabular}
+
+    \vspace{0.05in}
+
+    Observed as part of a multi-year campaign studying the
+    proper motions (measuring 200--400 km/s)
+    and variability of the knots.
+    Found a number of faint features
+    not previously detected.
 }
 
 \headerbox{Generation of CAOM-2 Metadata}{name=ingestion,column=1,span=2,below=etransfer, above=pipeline}{
