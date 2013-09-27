@@ -6,9 +6,9 @@
 
 % E-transfer
 
-\node[action] (fixfits) [below of=list, xshift=-5em] {Fix FITS Headers} edge (list.south west);
+\node[action] (fixfits) [below of=list, xshift=-5em-\flowpicturenudge] {Fix FITS Headers} edge (list.south west);
 
-\node[action] (convertobs) [below of=list, xshift=-17em] {Merge / Convert} edge (list.south west);
+\node[action] (convertobs) [below of=list, xshift=-17em-\flowpicturenudge] {Merge / Convert} edge (list.south west);
 
 \node[data] (tempfiles) [below of=fixfits, xshift=-6em] {Temporary Copy} edge (fixfits) edge(convertobs);
 
@@ -19,7 +19,7 @@
 
 % Headers and Ingestion
 
-\node[action] (readhead) [below of=list, xshift=10em] {Read Headers} edge (list.south east);
+\node[action] (readhead) [below of=list, xshift=10em+\flowpicturenudge] {Read Headers} edge (list.south east);
 
 \node[data] (database) [below of=readhead] {Intermediate Database} edge (readhead);
 

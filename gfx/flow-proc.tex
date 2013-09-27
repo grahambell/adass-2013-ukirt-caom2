@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage[a3paper,landscape]{geometry}
 \usepackage{tikz}
 \usepackage{txfonts}
@@ -14,12 +14,16 @@
 
 \tikzstyle{data} = [rectangle, bottom color=white, every entity]
 
-\tikzstyle{action} = [ellipse, bottom color=white, draw=black, every entity]
+\tikzstyle{action} = [ellipse, bottom color=white, draw=black, inner sep=0.0em, every entity]
 
 \pagestyle{empty}
+
+\newlength{\flowpicturenudge}
+\setlength{\flowpicturenudge}{-2em}
+
 \begin{document}
 
-\begin{tikzpicture} [node distance=4em, every edge/.style={link, stealth-}]
+\begin{tikzpicture} [node distance=3.5em, every edge/.style={link, stealth-}]
 \input{flow-picture}
 \end{tikzpicture}
 

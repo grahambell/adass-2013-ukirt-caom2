@@ -11,6 +11,8 @@ all: flow-crop.pdf hh111.pdf flow-proc-crop.eps
 
 flow.pdf: flow.tex flow-picture.tex
 
+flow-proc.pdf: flow.tex flow-picture.tex
+
 hh111.pdf: hh111.eps
 	epstopdf $<
 
