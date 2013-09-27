@@ -10,10 +10,11 @@
 \usepackage{color}
 \usetikzlibrary{backgrounds}
 
-\definecolor{u2cgreen}{RGB}{0,60,0}
+\definecolor{u2cgreen}{RGB}{0,150,0}
 \definecolor{u2cyellow}{RGB}{255,255,0}
 \definecolor{u2cltyellow}{RGB}{255,255,255}
 \definecolor{listingfaint}{gray}{0.70}
+\definecolor{metadatagreen}{RGB}{125,255,125}
 
 \setitemize[0]{leftmargin=10pt,labelindent=0pt}
 %\setenumerate[0]{leftmargin=15pt,itemindent=0pt}
@@ -328,15 +329,15 @@ Graham Bell,$^1$ Malcolm Currie,$^1$ Russell Redman,$^2$ Maren Purves,$^1$ Tim J
 };
 
 \begin{scope}[on background layer]
-\draw[->,>=stealth,green] (mongofile.east) to[out=0,in=180] (xmlid.west);
-\draw[->,>=stealth,green] (mongoobject.east) to[out=0,in=180] (xmlobject.west);
-\draw[->,>=stealth,green] (mongotype.east) to[out=0,in=180] (xmltype.west);
-\draw[->,>=stealth,green] (mongomode.east) to[out=0,in=100] (xmlmode.north);
-\draw[->,>=stealth,green] (mongoobs.east) to[out=0,in=270] (xmlobs.south);
-\draw[->,>=stealth,green] (mongodate.east) to[out=0,in=270] (xmldate.south);
+\draw[->,>=stealth,metadatagreen] (mongofile.east) to[out=0,in=180] (xmlid.west);
+\draw[->,>=stealth,metadatagreen] (mongoobject.east) to[out=0,in=180] (xmlobject.west);
+\draw[->,>=stealth,metadatagreen] (mongotype.east) to[out=0,in=180] (xmltype.west);
+\draw[->,>=stealth,metadatagreen] (mongomode.east) to[out=0,in=100] (xmlmode.north);
+\draw[->,>=stealth,metadatagreen] (mongoobs.east) to[out=0,in=270] (xmlobs.south);
+\draw[->,>=stealth,metadatagreen] (mongodate.east) to[out=0,in=270] (xmldate.south);
 
-\node (mongobrace) at ($(mongoamstart.east)!0.5!(mongoamend.east) + (1ex,0)$) {\textcolor{green}{\}}};
-\draw[->,>=stealth,green] (mongobrace.east) to[out=350,in=120] (xmlelevation.north);
+\node (mongobrace) at ($(mongoamstart.east)!0.5!(mongoamend.east) + (1ex,0)$) {\textcolor{metadatagreen}{\}}};
+\draw[->,>=stealth,metadatagreen] (mongobrace.east) to[out=350,in=120] (xmlelevation.north);
 
 \end{scope}
 \end{tikzpicture}
