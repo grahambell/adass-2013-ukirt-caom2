@@ -1,4 +1,9 @@
+.PHONY: all spell
+
 all: P01.pdf
+
+spell:
+	aspell -p ./words.txt -c P01.tex
 
 P01.dvi: P01.tex P01_f1.eps P01_f2.eps
 
