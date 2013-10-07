@@ -91,7 +91,7 @@ as a new collection.
 
 At the start of this project, the raw data had already
 been read from archive tapes stored at the
-Joint Astronomy Centre and organized on disk.
+Joint Astronomy Centre (JAC) and organized on disk.
 Over the years data from UKIRT were stored on different tape
 formats, read back, re-stored to different, more up-to-date
 tape formats, and eventually pulled off the tapes to store on
@@ -166,8 +166,11 @@ First the headers were
 read from the data files into an intermediate
 \texttt{MongoDB} database.
 Then for each observation an XML file was written
-using the \texttt{pyCAOM2} library,
-and sent to the CAOM-2 repository.
+using the \texttt{pyCAOM2} library.
+This was done at the JAC
+and the XML files were then put into
+the CAOM-2 repository
+by client software which transferred them over HTTP.
 Both of these steps were quite time-consuming
 and so separating them was very useful
 as it allowed them to be developed
