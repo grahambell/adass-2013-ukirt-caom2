@@ -23,13 +23,13 @@ We describe a  new archive of legacy data from the United Kingdom Infrared
 Telescope (UKIRT) at the Canadian Astronomy
 Data Centre (CADC) containing all available data
 from the Cassegrain instruments.
-The desire was to archive the raw data in as close to its original
+The desire was to archive the raw data in as close to the original
 format as possible, so where the data followed our current convention
 of having a single data file per observation, it was archived
 without alteration, except for minor fixes to headers of data in
 FITS format to allow it to pass \texttt{fitsverify} and be accepted by CADC.
 Some of the older data comprised multiple integrations in separate
-files per observation, stored in either NDF or DST format. These
+files per observation, stored in either Starlink NDF or Figaro DST format. These
 were placed inside HDS container files, and DST files were rearranged
 into NDF format.
 The metadata describing the observations is
@@ -47,12 +47,12 @@ Data Centre (CADC).
 The archive contains data from UKIRT's Cassegrain instruments
 --- listed in Table~\ref{p01:tab:instruments} ---
 but excludes the Wide Field Camera (WFCAM),
-since its data is already available in the WFCAM Science Archive
+since its data are already available in the WFCAM Science Archive
 \citep{2008MNRAS.384..637H}
 in Edinburgh.
 The archive is to include raw and reduced data,
 with the raw data
-kept in as close to its original raw format as possible.
+kept as close to the original raw format as possible.
 
 \begin{table}[!ht]
 \caption{Instruments for which data are included in the new archive}
@@ -137,13 +137,13 @@ For transfer to the archive, these files were
 required to pass
 \texttt{fitsverify},
 and this needed a few fixes to the headers.
-One example was the removal of \texttt{Z} characters
+One example was the removal of the \texttt{Z} character
 previously used to indicate UTC in date headers.
 
 \altsubsubsection*{NDF}
 
 Much of the data were stored directly in
-Starlink extensible N-dimensional Data Format
+Starlink extensible $N$-dimensional Data Format
 \citep[see for example,][]{P91_adassxxiii},
 which itself is based on the
 Starlink Hierarchical Data System (HDS).
@@ -199,23 +199,23 @@ the pipeline to find the required calibrations.
 involved except for CGS3.
 
 We are currently testing the pipeline on a range of data,
-including that predating its introduction.
+including that predating its introduction (around 1999).
 Some header changes can be handled by updating the
 \texttt{Astro::\-FITS::\-HdrTrans} module
-\citep[section 2.2]{2008AN....329..295C}
+\citep[Section 2.2]{2008AN....329..295C},
 which is used by \texttt{ORAC-DR} to convert
-instrument specific header information into
+instrument-specific header information into
 a common set of generic headers.
 
 In other cases the original headers are insufficient,
-for example in allowing the pipeline to
+for example, in allowing the pipeline to
 select a data reduction recipe and determine the
 grouping of the files.
 Therefore the intermediate database of header information
 can be re-used to identify
 the groups of observations to be processed together and to infer
 additional headers.
-An example image reduced by this process is given in
+An example image reduced by this process is shown in
 Figure~\ref{p01:fig:hh111}.
 
 \articlefigure[angle=270,scale=0.5]{P01_f2}{p01:fig:hh111}{Example image
@@ -229,7 +229,9 @@ It was observed as part of a multi-year campaign
 studying the proper motions (measuring 265--461 km/s)
 and variability of the knots in the protostellar outflows,
 and found a number of faint features
-which had previously not been detected.}
+which had previously not been detected.
+Observations of transient phenomena such as this
+are particularly useful to include in the Virtual Observatory.}
 
 \section{Conclusions}
 
